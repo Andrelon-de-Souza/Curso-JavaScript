@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificando Nacionalidade</title>
+</head>
+<body>
+    <h1>Sistemas de Identificação de Nacionalidade</h1>
+    Pais em que Nasceu: <input type="text" name="txtnasc" id="txtnasc">
+    <input type="button" value="Identificar" onclick="Identificar()">
+    <div id="res">
+
+    </div>
+
+    <script>
+        function Identificar() {
+            var txtn = window.document.querySelector('input#txtnasc')
+            var res = window.document.querySelector('div#res')
+            var nasc = txtn.value
+            res.innerHTML = `<p>Você nasceu no(a) <strong>${nasc}</strong>!</p>`
+
+            if(nasc != 'Brasil'){
+                res.innerHTML += `<p>Portanto, você é <strong>Estrangeiro</strong>!!</p>`
+            }else {
+                res.innerHTML +=  `<p>Portanto, você é <strong>Brasileiro</strong>!!</p>`
+            }
+        }
+    </script>
+
+    
+</body>
+</html>
